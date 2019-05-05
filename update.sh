@@ -40,7 +40,7 @@ update() {
 	check_exit_status
 }
 
-housekeeping() {
+cleanup() {
 
 	sudo apt-get autoremove -y;
 	check_exit_status
@@ -48,7 +48,7 @@ housekeeping() {
 	sudo apt-get autoclean -y;
 	check_exit_status
 
-        sudo apt-get clean;
+        sudo apt-get clean -y;
 	check_exit_status
 
 	sudo updatedb;
@@ -67,5 +67,5 @@ leave() {
 
 greeting
 update
-housekeeping
+cleanup
 leave
